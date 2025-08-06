@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>블록레벨/인라인레벨 태그</title>
+    <style>
+        h1 { background-color: aqua;}
+        p { background-color: red; }
+        div { background-color: yellow; }
+    </style>
+</head>
+<body>
+    <h1>block level</h1>
+    <hr>
+    <h1 style="display:inline;">블록레벨 #1</h1>
+    <p>블록라벨 #2</p>
+    <div>블록라벨 #3</div>
+    <div style="background-color: yellow; width:300px;">
+        <h2>div 태그에 포함</h2>
+        <button>div 태그에 포함된 버튼</button>
+    </div>
+    <h1>in-line level</h1>
+    <hr>
+    <a href="http://www.naver.com">네이버</a>
+    <a href="http://www.google.com">구글</a>
+    <button>Login</button>
+    <span style="background-color: chartreuse; display:block;"> 블록 레벨로 변경 </span>
+    <span style="background-color: blueviolet;"> 
+        <a href="#">다음</a> 
+    </span>
+    <span style="background-color: tomato; width:900px;">인라인레벨 사이즈 변경</span>
+    
+    <h2>in-line block</h2>
+    <img src="https://cf.lottecinema.co.kr//Media/MovieFile/MovieImg/202507/22648_201_1.jpg" alt="좀비딸" width="1%" style="display:block;"/>
+    <img src="https://cf.lottecinema.co.kr//Media/MovieFile/MovieImg/202507/22648_201_1.jpg" alt="좀비딸" width="2%"/>
+    <img src="https://cf.lottecinema.co.kr//Media/MovieFile/MovieImg/202507/22648_201_1.jpg" alt="좀비딸" width="3%"/>
+    <img src="https://cf.lottecinema.co.kr//Media/MovieFile/MovieImg/202507/22648_201_1.jpg" alt="좀비딸" width="4%"/>
+</body>
+</html>
