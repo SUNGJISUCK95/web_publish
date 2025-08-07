@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- 무료 폰트 사이트 -->
+</head>
+<style>
+    * {
+        margin:0;
+        padding:0;
+    }
+    ul {
+        width:50%;
+        height:600px;
+        background-color: black;
+        border-radius: 10%;
+        margin:0 auto;
+        color:white;
+       
+    }
+    input {
+        width: 90%;
+        height: 20px;
+    }
+    li {
+        display: inline-block;
+    }
+    #radio {
+        width:100%;
+        height: 10px;
+    }
+   
+</style>
+<body>
+    <form action="">
+        <ul>
+            <li>
+                <img style="border-radius: 50%;" width="40%" src="../download/img5.jpg" alt="">
+            </li>
+            <li>
+                <i class="fa-solid fa-envelope-open"></i>
+                <input type="text" placeholder="Username">
+            </li>
+            <li>
+                <i class="fa-solid fa-lock"></i>
+                <input type="text" placeholder="Password">
+            </li>
+            <li>
+                <input id="radio" type="radio"><span>Remember me</span>
+                <input id="radio" type="radio"><span>Remember me</span>
+            </li>
+            <li>
+                <button>Login</button>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

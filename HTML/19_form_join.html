@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #title {
+        background-color: blue;
+        color: white;
+        font-weight: 600;
+        padding: 0.1%;
+    }
+    ul {
+        width:30%;
+        background-color: rgb(212, 212, 212);
+        border: 1px solid rgb(66, 66, 66);
+        padding: 1%;
+        border-radius: 1%;
+    }
+    li {
+        display: block;
+        width:100%;
+    }
+    input {
+        width:90%;
+        height:25px;
+    }
+    #hobby, #seldrink {
+        width:10%;
+        height:10px;
+    }
+</style>
+<body>
+    <form action="#">
+        <h1>회원 가입</h1>
+        <div><span id="title">필수항목</span></div>
+        <ul>
+            <li>
+                <label for="">아이디</label><br>
+                <input type="text" name="id">
+            </li>
+            <li>
+                <label for="">비밀번호</label><br>
+                <input type="password" name="password">
+            </li>
+            <li>
+                <label for="">이메일</label><br>
+                <input type="text" name="email" placeholder="hong@naver.com">
+            </li>
+            <li>
+                <label for="">성명</label><br>
+                <input type="text" name="name" placeholder="홍길동">
+            </li>
+            <li>
+                <label for="">나이</label><br>
+                <input type="text" name="age">
+            </li>
+        </ul>
+        <div><span id="title">당신에 대해 알고 싶어요</span></div>
+        <ul>
+            <li>
+                <label for="">취미를 선택해주세요</label><br>
+                <input id="hobby" type="radio" name="hobby" value="game"> <span>게임하기</span>
+                <input id="hobby" type="radio" name="hobby" value="mugic"> <span>음악듣기</span>
+                <input id="hobby" type="radio" name="hobby" value="drink"> <span>음료섭취</span>
+            </li>
+            <li>
+                <label for="">좋아하는 음료를 선택해주세요 (항목선택가능)</label><br>
+                <input id="seldrink" type="checkbox" name="seldrink" value="ade"> <span>에이드</span>
+                <input id="seldrink" type="checkbox" name="seldrink" value="milk"> <span>우유</span>
+                <input id="seldrink" type="checkbox" name="seldrink" value="coffee"> <span>커피</span>
+            </li>
+            <li>
+                <label for="">참여하고 싶은 날짜</label>
+                <input type="date">
+            </li>
+            <li>
+                <label for="">얼죽아에서 참여하고 싶은 모임</label>
+                <select name="group">
+                    <option value="default">선택해주세요</option>
+                    <option value="game_group">게임 모임</option>
+                    <option value="mugic_group">음악 모임</option>
+                    <option value="running_group">러닝 모임</option>
+                </select>
+            </li>
+            <li>
+                <label for="">포트폴리오 제출</label><br>
+                <button>포트폴리오 업로드</button>
+                <input type="file" name="" id="">
+            </li>
+            <li>
+                <label for="">하고싶은 말</label>
+                <textarea name="intro" cols="50" rows="10" placeholder="적어주세요"></textarea>
+                <!-- textarea는 스페이스바도 인식함-->
+            </li>
+            <li>
+                <button type="reset">다시하기</button>
+                <button type="submit">전송하기</button>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>
