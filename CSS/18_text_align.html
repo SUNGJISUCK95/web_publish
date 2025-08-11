@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Align</title>
+    <style>
+        p {
+            background-color: aquamarine;
+        }
+        span {
+            background-color: tomato;
+            text-align: center;
+            text-transform: uppercase; /*모두 대문자*/
+        }
+        .left {
+            text-align: left;
+            width: 200px;            
+        }
+        .center {
+            text-align: center;
+        }
+        .right {
+            text-align: right;
+            width: 200px;
+        }
+        .justify {
+            text-align: justify; /*왼쪽, 오른쪽 같이 정렬*/
+            width: 50%;
+            background-color: blueviolet;
+            line-height: 70px; /*글자 간격*/
+            text-transform: lowercase; /*모두 소문자*/
+        }
+        .letter{
+            width:700px;
+            border: 1px solid blue;
+            letter-spacing: 15px; /*한 문자별로 나누기*/
+            text-indent: 100px; /*처음 부분 띄어쓰기*/
+            text-transform: capitalize; /*단어의 첫부분만 대문자*/
+        }
+        .word{
+            width:700px;
+            border: 1px solid red;
+            word-spacing: 15px; /*단어별로 나누기*/
+            text-indent: -100px; /*처음 부분 당겨쓰기*/
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Align</h1>
+    <span>inline level - span</span><br>
+    <p class="left">Text Align - left</p>
+    <p class="center">Text Align - center <span>Add span</span></p>
+    <p class="right">Text Align - right</p>
+    <p class="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro minima voluptas dolorum dolore error natus, fugit unde laborum voluptate ratione officiis molestiae perferendis beatae provident numquam odio ut saepe explicabo?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum est accusamus ratione quidem repudiandae mollitia iure eos at eaque, vitae unde ullam odit quo nam quis, provident debitis illo ea.</p>
+    <p class="letter">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro minima voluptas dolorum dolore error natus, fugit unde laborum voluptate ratione officiis molestiae perferendis beatae provident numquam odio ut saepe explicabo?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum est accusamus ratione quidem repudiandae mollitia iure eos at eaque, vitae unde ullam odit quo nam quis, provident debitis illo ea.</p>
+    <p class="word">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro minima voluptas dolorum dolore error natus, fugit unde laborum voluptate ratione officiis molestiae perferendis beatae provident numquam odio ut saepe explicabo?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum est accusamus ratione quidem repudiandae mollitia iure eos at eaque, vitae unde ullam odit quo nam quis, provident debitis illo ea.</p>
+</body>
+</html>
