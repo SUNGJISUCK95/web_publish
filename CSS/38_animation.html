@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+        .box:hover {
+            width: 200px;
+            height: 200px;
+            border: 1px solid silver;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation: changeColor 9s 0s 999; /*name duration delay iteration-count*/            
+        }
+
+        @keyframes changeColor {
+            from { background-color: aqua; }
+            50% { background-color: tomato; }
+            to { background-color: violet; }
+        }
+
+        .box-img {            
+            width: 400px;
+            height: 600px;
+            border:1px solid red;
+            background-image: url(../download/img1.jpg);
+            background-size: cover; 
+        }
+
+        .box-img:hover {
+            width: 400px;
+            height: 600px;
+            animation: changeImage 9s 0s 999;
+        }
+
+        @keyframes changeImage {
+            from { background-image: url(../download/img1.jpg);}
+            30% { background-image: url(../download/img2.jpg);}
+            60% { background-image: url(../download/img3.jpg);}
+            to { background-image: url(../download/img1.jpg);}
+        }
+    </style>
+</head>
+<body>
+    <h1>Animation Style</h1>
+    <div class="box">box</div>
+    <div class="box-img"></div>
+</body>
+</html>
