@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/461772.webp" type="image/x-icon">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>에어비앤비 | 프로토타입</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="header-logo">
+                <a href="#"><img class="header-logo-img" src="images/Airbnb_Logo_Bélo.svg.png" alt="header-logo-img"></a>
+            </div>
+            <nav>
+                <ul class="header-menu">
+                    <li><a href="#" class="header-menu-item"><i class="fa-solid fa-house-chimney"></i> 숙소</a></li>
+                    <li><a href="#" class="header-menu-item"><i class="fa-solid fa-comment-dots"></i> 체험</a></li>
+                    <li><a href="#" class="header-menu-item"><i class="fa-solid fa-bell-concierge"></i> 서비스</a></li>
+                </ul>
+            </nav>
+            <div>
+                <ul class="header-menu-img">
+                    <li><a href="#" class="header-menu-item-img">호스팅 하기</a></li>
+                    <li><a href="#" class="header-menu-item-img"><i class="fa-solid fa-globe"></i></a></li>
+                    <li><a href="#" class="header-menu-item-img"><i class="fa-solid fa-bars"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <table class="header-search">
+                <td>
+                    <span>여행지</span>
+                    <input type="text" class="header-search-item" placeholder="여행지 검색">
+                </td>
+                <td>
+                    <span>체크인</span>
+                    <input type="date" class="header-search-item" placeholder="날짜 추가">
+                </td>
+                <td>
+                    <span>체크아웃</span>
+                    <input type="date" class="header-search-item" placeholder="날짜 추가">
+                </td>
+                <td>
+                    <span>여행자</span>
+                    <input type="text" class="header-search-item" placeholder="게스트 추가">
+                    <button class="header-search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </td>
+            </table>            
+        </div>        
+    </header>
+    <main class="main">
+         <div class="main-menu">
+            <div class="main-menu-title">
+                <ul>
+                    <li>
+                        <h3>부산의 인기 숙소 <span>〉</span></h3>
+                    </li>
+                    <li>
+                        <button class="btn-left">〈</button>
+                        <button class="btn-right">〉</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-menu-project">
+                <ul class="project">
+                    <li>
+                        <img class="project-img"src="images/hotel1.jpg" alt="hotel1">
+                    </li>
+                    <li class="project-title">
+                        <a href="#">부산의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">12월 5일~7일</a>
+                        <p>₩89,000 · 2박 · ★ 5.0</p>
+                    </li>
+                </ul>
+                <ul class="project">
+                    <li class="project-img-box">
+                        <img class="project-img" src="images/hotel2.jpg" alt="hotel2">
+                        <a class="project-img-goob" href="#">게스트 선호</a>
+                        <a class="project-img-love" href="#"><i class="fa-solid fa-heart"></i></a>
+                    </li>
+                    <li class="project-title">
+                        <a href="#">동래구의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">11월 21일~23일</a>
+                        <p>₩39,371 · 2박 · ★ 4.89</p>
+                    </li>
+                </ul>
+                <ul class="project">
+                    <li class="project-img-box">
+                        <img class="project-img" src="images/hotel3.jpg" alt="hotel3">  
+                        <a class="project-img-goob" href="#">게스트 선호</a>
+                        <a class="project-img-love" href="#"><i class="fa-solid fa-heart"></i></a>                      
+                    </li>
+                    <li class="project-title">
+                        <a href="#">부산의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">12월 5일~7일</a>
+                        <p>₩115,259 · 2박 · ★ 4.92</p>
+                    </li>
+                </ul>
+                <ul class="project">
+                    <li class="project-img-box">
+                        <img class="project-img" src="images/hotel4.jpg" alt="hotel4">
+                        <a class="project-img-goob" href="#">게스트 선호</a>
+                        <a class="project-img-love" href="#"><i class="fa-solid fa-heart"></i></a>    
+                    </li>
+                    <li class="project-title">
+                        <a href="#">오크홀름의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">10월 31일 ~ 11월 2일</a>
+                        <p>₩119,824 · 2박 · ★ 4.89</p>
+                    </li>
+                </ul>
+                 <ul class="project">
+                    <li>
+                        <img class="project-img" src="images/hotel5.jpg" alt="hotel5">
+                    </li>
+                    <li class="project-title">
+                        <a href="#">부산의 집</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">10월 10일~12일</a>
+                        <p>₩147,497 · 2박 · ★ 5.0</p>
+                    </li>
+                </ul>
+                 <ul class="project">
+                    <li class="project-img-box">
+                        <img class="project-img" src="images/hotel6.jpg" alt="hotel6">
+                        <a class="project-img-goob" href="#">게스트 선호</a>
+                        <a class="project-img-love" href="#"><i class="fa-solid fa-heart"></i></a>   
+                    </li>
+                    <li class="project-title">
+                        <a href="#">부산의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">11월 7일~9일</a>
+                        <p>₩97,000 · 2박 · ★ 4.87</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+         <div class="main-menu">
+            <div class="main-menu-title">
+                <ul>
+                    <li>
+                        <h3>부산의 인기 숙소 <span>〉</span></h3>
+                    </li>
+                    <li>
+                        <button class="btn-left">〈</button>
+                        <button class="btn-right">〉</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-menu-project">
+                <ul class="project">
+                    <li>
+                        <img class="project-img"src="images/hotel1.jpg" alt="hotel1">
+                    </li>
+                    <li class="project-title">
+                        <a href="#">부산의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">12월 5일~7일</a>
+                        <p>₩89,000 · 2박 · ★ 5.0</p>
+                    </li>
+                </ul>
+                <ul class="project">
+                    <li class="project-img-box">
+                        <img class="project-img" src="images/hotel2.jpg" alt="hotel2">
+                        <a class="project-img-goob" href="#">게스트 선호</a>
+                        <a class="project-img-love" href="#"><i class="fa-solid fa-heart"></i></a>
+                    </li>
+                    <li class="project-title">
+                        <a href="#">동래구의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">11월 21일~23일</a>
+                        <p>₩39,371 · 2박 · ★ 4.89</p>
+                    </li>
+                </ul>
+                <ul class="project">
+                    <li class="project-img-box">
+                        <img class="project-img" src="images/hotel3.jpg" alt="hotel3">  
+                        <a class="project-img-goob" href="#">게스트 선호</a>
+                        <a class="project-img-love" href="#"><i class="fa-solid fa-heart"></i></a>                      
+                    </li>
+                    <li class="project-title">
+                        <a href="#">부산의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">12월 5일~7일</a>
+                        <p>₩115,259 · 2박 · ★ 4.92</p>
+                    </li>
+                </ul>
+                <ul class="project">
+                    <li class="project-img-box">
+                        <img class="project-img" src="images/hotel4.jpg" alt="hotel4">
+                        <a class="project-img-goob" href="#">게스트 선호</a>
+                        <a class="project-img-love" href="#"><i class="fa-solid fa-heart"></i></a>    
+                    </li>
+                    <li class="project-title">
+                        <a href="#">오크홀름의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">10월 31일 ~ 11월 2일</a>
+                        <p>₩119,824 · 2박 · ★ 4.89</p>
+                    </li>
+                </ul>
+                 <ul class="project">
+                    <li>
+                        <img class="project-img" src="images/hotel5.jpg" alt="hotel5">
+                    </li>
+                    <li class="project-title">
+                        <a href="#">부산의 집</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">10월 10일~12일</a>
+                        <p>₩147,497 · 2박 · ★ 5.0</p>
+                    </li>
+                </ul>
+                 <ul class="project">
+                    <li class="project-img-box">
+                        <img class="project-img" src="images/hotel6.jpg" alt="hotel6">
+                        <a class="project-img-goob" href="#">게스트 선호</a>
+                        <a class="project-img-love" href="#"><i class="fa-solid fa-heart"></i></a>   
+                    </li>
+                    <li class="project-title">
+                        <a href="#">부산의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">11월 7일~9일</a>
+                        <p>₩97,000 · 2박 · ★ 4.87</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+         <div class="main-menu">
+            <div class="main-menu-title">
+                <ul>
+                    <li>
+                        <h3>부산의 인기 숙소 <span>〉</span></h3>
+                    </li>
+                    <li>
+                        <button class="btn-left">〈</button>
+                        <button class="btn-right">〉</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-menu-project">
+                <ul class="project">
+                    <li>
+                        <img class="project-img"src="images/hotel1.jpg" alt="hotel1">
+                    </li>
+                    <li class="project-title">
+                        <a href="#">부산의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">12월 5일~7일</a>
+                        <p>₩89,000 · 2박 · ★ 5.0</p>
+                    </li>
+                </ul>
+                <ul class="project">
+                    <li class="project-img-box">
+                        <img class="project-img" src="images/hotel2.jpg" alt="hotel2">
+                        <a class="project-img-goob" href="#">게스트 선호</a>
+                        <a class="project-img-love" href="#"><i class="fa-solid fa-heart"></i></a>
+                    </li>
+                    <li class="project-title">
+                        <a href="#">동래구의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">11월 21일~23일</a>
+                        <p>₩39,371 · 2박 · ★ 4.89</p>
+                    </li>
+                </ul>
+                <ul class="project">
+                    <li class="project-img-box">
+                        <img class="project-img" src="images/hotel3.jpg" alt="hotel3">  
+                        <a class="project-img-goob" href="#">게스트 선호</a>
+                        <a class="project-img-love" href="#"><i class="fa-solid fa-heart"></i></a>                      
+                    </li>
+                    <li class="project-title">
+                        <a href="#">부산의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">12월 5일~7일</a>
+                        <p>₩115,259 · 2박 · ★ 4.92</p>
+                    </li>
+                </ul>
+                <ul class="project">
+                    <li class="project-img-box">
+                        <img class="project-img" src="images/hotel4.jpg" alt="hotel4">
+                        <a class="project-img-goob" href="#">게스트 선호</a>
+                        <a class="project-img-love" href="#"><i class="fa-solid fa-heart"></i></a>    
+                    </li>
+                    <li class="project-title">
+                        <a href="#">오크홀름의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">10월 31일 ~ 11월 2일</a>
+                        <p>₩119,824 · 2박 · ★ 4.89</p>
+                    </li>
+                </ul>
+                 <ul class="project">
+                    <li>
+                        <img class="project-img" src="images/hotel5.jpg" alt="hotel5">
+                    </li>
+                    <li class="project-title">
+                        <a href="#">부산의 집</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">10월 10일~12일</a>
+                        <p>₩147,497 · 2박 · ★ 5.0</p>
+                    </li>
+                </ul>
+                 <ul class="project">
+                    <li class="project-img-box">
+                        <img class="project-img" src="images/hotel6.jpg" alt="hotel6">
+                        <a class="project-img-goob" href="#">게스트 선호</a>
+                        <a class="project-img-love" href="#"><i class="fa-solid fa-heart"></i></a>   
+                    </li>
+                    <li class="project-title">
+                        <a href="#">부산의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">11월 7일~9일</a>
+                        <p>₩97,000 · 2박 · ★ 4.87</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+         <div class="main-menu">
+            <div class="main-menu-title">
+                <ul>
+                    <li>
+                        <h3>부산의 인기 숙소 <span>〉</span></h3>
+                    </li>
+                    <li>
+                        <button class="btn-left">〈</button>
+                        <button class="btn-right">〉</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="main-menu-project">
+                <ul class="project">
+                    <li>
+                        <img class="project-img"src="images/hotel1.jpg" alt="hotel1">
+                    </li>
+                    <li class="project-title">
+                        <a href="#">부산의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">12월 5일~7일</a>
+                        <p>₩89,000 · 2박 · ★ 5.0</p>
+                    </li>
+                </ul>
+                <ul class="project">
+                    <li class="project-img-box">
+                        <img class="project-img" src="images/hotel2.jpg" alt="hotel2">
+                        <a class="project-img-goob" href="#">게스트 선호</a>
+                        <a class="project-img-love" href="#"><i class="fa-solid fa-heart"></i></a>
+                    </li>
+                    <li class="project-title">
+                        <a href="#">동래구의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">11월 21일~23일</a>
+                        <p>₩39,371 · 2박 · ★ 4.89</p>
+                    </li>
+                </ul>
+                <ul class="project">
+                    <li class="project-img-box">
+                        <img class="project-img" src="images/hotel3.jpg" alt="hotel3">  
+                        <a class="project-img-goob" href="#">게스트 선호</a>
+                        <a class="project-img-love" href="#"><i class="fa-solid fa-heart"></i></a>                      
+                    </li>
+                    <li class="project-title">
+                        <a href="#">부산의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">12월 5일~7일</a>
+                        <p>₩115,259 · 2박 · ★ 4.92</p>
+                    </li>
+                </ul>
+                <ul class="project">
+                    <li class="project-img-box">
+                        <img class="project-img" src="images/hotel4.jpg" alt="hotel4">
+                        <a class="project-img-goob" href="#">게스트 선호</a>
+                        <a class="project-img-love" href="#"><i class="fa-solid fa-heart"></i></a>    
+                    </li>
+                    <li class="project-title">
+                        <a href="#">오크홀름의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">10월 31일 ~ 11월 2일</a>
+                        <p>₩119,824 · 2박 · ★ 4.89</p>
+                    </li>
+                </ul>
+                 <ul class="project">
+                    <li>
+                        <img class="project-img" src="images/hotel5.jpg" alt="hotel5">
+                    </li>
+                    <li class="project-title">
+                        <a href="#">부산의 집</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">10월 10일~12일</a>
+                        <p>₩147,497 · 2박 · ★ 5.0</p>
+                    </li>
+                </ul>
+                 <ul class="project">
+                    <li class="project-img-box">
+                        <img class="project-img" src="images/hotel6.jpg" alt="hotel6">
+                        <a class="project-img-goob" href="#">게스트 선호</a>
+                        <a class="project-img-love" href="#"><i class="fa-solid fa-heart"></i></a>   
+                    </li>
+                    <li class="project-title">
+                        <a href="#">부산의 아파트</a>
+                    </li>
+                    <li class="project-price">
+                        <a href="#">11월 7일~9일</a>
+                        <p>₩97,000 · 2박 · ★ 4.87</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-title">
+            <h2>다음 여행을 위한 추천 여행지</h2>
+        </div>
+        <div class="footer-colum-box">
+            <ul class="footer-colum-menu">
+                <li class="footer-menu-title">에어비앤비 지원</li>
+                <li><a href="#">도움말 센터</a></li>
+                <li><a href="#">에어커버</a></li>
+                <li><a href="#">차별 반대</a></li>
+                <li><a href="#">장애인 지원</a></li>
+                <li><a href="#">예약 취소 옵션</a></li>
+                <li><a href="#">이웃 민원 신고</a></li>
+            </ul>
+            <ul class="footer-colum-menu">
+                <li class="footer-menu-title">호스팅</li>
+                <li><a href="#">당신의 공간을 에어비앤비하세요</a></li>
+                <li><a href="#">에어비앤비에서 체험 호스팅하기</a></li>
+                <li><a href="#">에어비앤비에서 서비스 호스팅하기대</a></li>
+                <li><a href="#">호스트를 위한 에어커버</a></li>
+                <li><a href="#">호스팅 자료</a></li>
+                <li><a href="#">커뮤니티 포럼</a></li>
+                <li><a href="#">책임감 있는 호스팅</a></li>
+                <li><a href="#">무료 호스팅 클래스 참여하기</a></li>
+                <li><a href="#">공동 호스트 찾기</a></li>
+            </ul>
+            <ul class="footer-colum-menu">
+                <li class="footer-menu-title">에어비앤비</li>
+                <li><a href="#">2025 여름 업그레이드</a></li>
+                <li><a href="#">뉴스룸</a></li>
+                <li><a href="#">채용정보</a></li>
+                <li><a href="#">투자자 정보</a></li>
+                <li><a href="#">Airbnb.org 긴급 숙소</a></li>
+            </ul>
+        </div>
+        <div class="footer-row-box">
+            <ul class="footer-row-menu">
+                <li>© 2025 Airbnb, Inc. <span>·</span></li>
+                <li><a href="#">개인정보 처리방침</a> <span>·</span></li>
+                <li><a href="#">쿠키 정책</a> <span>·</span></li>
+                <li><a href="#">이용약관</a> <span>·</span></li>
+                <li><a href="#">사이트맵</a> <span>·</span></li>
+                <li><a href="#">한국의 변경된 환불 정책</a> <span>·</span></li>
+                <li><a href="#">회사 세부정보</a></li>
+            </ul>
+            <ul class="footer-row-menu">
+                <li><a href=""><i class="fa-solid fa-globe"></i> 한국어 (KR)</a></li>
+                <li><a href="">₩ KRW</a></li>
+                <li><a href=""><i class="fa-brands fa-facebook sns"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-x-twitter sns"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-instagram sns"></i></a></li>
+                <li><a href=""><i class="fa-solid fa-blog sns"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-address">
+            <p>웹사이트 제공자: Airbnb Ireland UC, private unlimited company, 8 Hanover Quay Dublin 2, D02 DP23 Ireland | 이사: Dermot Clarke, Killian Pattwell, Andrea Finnegan | VAT 번호: IE9827384L | 사업자 등록 번호: IE 511825 | 연락처: terms@airbnb.com, 웹사이트, 080-822-0230 | 호스팅 서비스 제공업체: 아마존 웹서비스 | 에어비앤비는 통신판매 중개자로 에어비앤비 플랫폼을 통하여 게스트와 호스트 사이에 이루어지는 통신판매의 당사자가 아닙니다. 에어비앤비 플랫폼을 통하여 예약된 숙소, 체험, 호스트 서비스에 관한 의무와 책임은 해당 서비스를 제공하는 호스트에게 있습니다.</p>
+        </div>
+    </footer>
+</body>
+</html>
