@@ -1,8 +1,7 @@
 /**
  * commons 폴더에 저장된 자바스크립트 함수 임포트
  */
-import { singleGugudan } from '../commons/gugudan.js'; 
-import { multiGugudan } from '../commons/gugudan.js'; 
+import { singleGugudan, multiGugudan } from '../commons/gugudan.js'; 
 //gugudan.js파일을 불러와서 안에 있는 함수를 사용
 
 singleGugudan(3);
