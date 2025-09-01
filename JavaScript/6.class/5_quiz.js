@@ -45,5 +45,8 @@ for(let i=0; i<dataList.length; i++) {
     objList.push(new Student(obj.name, obj.age, obj.address, obj.emoji));
 }
 
-let s1 = object[0];
-console.log(s1.getName());
+let s1 = objList[0];
+console.log(s1.getAge());
+
+let s2 = objList[3];
+console.log(s2.getName());
