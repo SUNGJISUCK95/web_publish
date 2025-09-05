@@ -1,0 +1,12 @@
+.swiper {
+    border: 1px solid gray;
+    width: 398px;
+    height: 597px;
+}
+.seiper-slide {
+    display: flex;
+}
+img {
+    width: 398px;
+    height: 597px;
+}
