@@ -1,0 +1,45 @@
+/** value값에 따옴표 삭제 */
+
+.menu-list{
+  list-style-type: none;
+  display: flex;
+  gap: 5px;
+}
+
+.menu {
+  text-decoration: none;
+  padding: 5px 20px;
+}
+
+.button{
+  width: 150px;
+  height: 50px;
+  background-color: aquamarine;
+  color: green;
+}
+
+.submit{
+  width: 200px;
+  height: 75px;
+  background-color: saddlebrown;
+  color: aqua;
+}
+
+.reset{
+  width: 250px;
+  height: 100px;
+  background-color: darkblue;
+  color: hotpink;
+}
+
+.title {
+  color: red;
+}
+
+.title3 {
+  background: blue;
+}
+
+.mybutton {
+  border: 2px solid purple;
+}
