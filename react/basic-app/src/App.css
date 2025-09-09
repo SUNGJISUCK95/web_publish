@@ -43,3 +43,24 @@
 .mybutton {
   border: 2px solid purple;
 }
+
+.number {
+  font-size: 50px;
+  padding: 10px;
+}
+
+.total-number {
+  font-size: 50px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.counter-container {
+  text-align: center;
+  width: 300px;
+  margin: auto;
+  border: 2px solid gray;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
