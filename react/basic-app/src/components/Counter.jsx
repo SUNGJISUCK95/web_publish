@@ -1,7 +1,12 @@
-import { useState } from "react"; // hoc을 이용한 언어들로 hocs라고 한다.
+import { useEffect, useState } from "react"; // hoc을 이용한 언어들로 hocs라고 한다.
                                   // 사용하려면 import해줘야 한다.
 
-export function Counter({click, total}) {
+export function Counter({click, total, init}) {
+    //useEffect : Counter 컴포넌트 로딩 시 최초에 처음으로 실행되는 함수,
+    useEffect(() => {
+        setNumber(0);
+    }, [init]); //dependencies: 값이 변경될 때마다 재호출, [] 사용     
+
     //방법1) javascript 방식
     // let total = 0;
 
@@ -50,7 +55,7 @@ export function Counter({click, total}) {
 
         //방법2) hoc 방식
         setNumber(0); //초기화
-        click("초기화");
+        click("초기화"); //부모의 click함수 호출
     }
 
     return (
