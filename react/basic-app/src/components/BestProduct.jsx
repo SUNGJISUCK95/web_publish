@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
+import { fetchData } from "../util/commonData.js";
+import { BestProductImage } from "./shared/BestProductImage.jsx";
+import { BestProductContent } from "./shared/BestProductContent.jsx";
 
 /**
  * 베스트 상품 컴포넌트
  */
 export function BestProduct() {
     const [cartCount, setCartCount] = useState(0);
-    const [bestProductList, setBestProductList] = useState([]); 
+    const [bestProductList, setBestProductList] = useState([]); //배열일 경우 선언도 []로 하기
 
     const handleCartCount = () => {
         setCartCount(cartCount+1);
@@ -26,13 +29,22 @@ export function BestProduct() {
         //     .catch(error => console.log(error));
 
         //방법2)
-        const fetchData = async () => {
-            const response = await fetch("/data/best_products.json");
-            const jsonData = await response.json();
-            setBestProductList(jsonData);
-        }
-        fetchData();
-           
+        // const fetchData = async () => {
+        //     const response = await fetch("/data/best_products.json");
+        //     const jsonData = await response.json();
+        //     setBestProductList(jsonData);
+        // }
+        // fetchData();
+
+        //방법3) //fetch 함수 생성 //이건 commonData.js 이용
+        const fetch = async() => { //fetchData가 비동기 함수이므로 함수화하여 async, await 사용
+            const result = await fetchData("/data/best_products.json");
+            console.log('result => ', result);
+            setBestProductList(result); //useState로 설정해 두어 setBestProductList로 bestProductList배열에 return값 저장
+        } 
+        
+        fetch();
+
     }, []);
 
     return (
@@ -60,52 +72,13 @@ export function BestProductItem({item, cartCount}) {
 
     return (
         <div>
-            <BestProductImage img={item.img} style={{width: "200px", height: "300px"}} rank={item.rank} like={item.like} cartCount={cartCount} />
-            <BestProductContent title={item.title} sale={item.sale} price={item.price} like={item.like} />
+            <BestProductImage img={item.img} style={{width: "200px", height: "300px"}} rank={item.rank} like={item.like} icon={item.icon} iconStyle={item.iconStyle} cartCount={cartCount} />
+            <BestProductContent title={item.title} sale={item.sale} price={item.price} like={item.like} icon={item.icon}/>
         </div>
     );
 }
 
-/**
- * 베스트 상품 컨텐츠 컴포넌트
- */
-export function BestProductContent({title, sale, price, like}) {
-    return (
-        <div className="best-product-content">
-            <p className="best-product-content-title">{title}</p>
-            <span className="best-product-content-sale">{sale}</span>
-            <span className="best-product-content-price">{price}</span>
-            { (like) ? <span className="best-product-content-like ">🤍</span> : "" }
-        </div>
-    );
-}
 
-/**
- * 베스트 상품 이미지 컴포넌트
- */
-export function BestProductImage({img, style, rank, like, cartCount}) {
-    const handleAddCart = () => {
-        // console.log(`add cart`);
-        cartCount();
-    }
 
-    return (
-        <div className="best-product-img">
-            <ProductImage img={img} style={style} />
-            <span className="best-product-img-no">{rank}</span>
-            { (like) ? <span className="best-product-img-like" onClick={handleAddCart} >🛒</span> : "" }
-        </div>
-    );
-}
 
-/**
- * 상품 이미지 컴포넌트
- */
-export function ProductImage({img, style}) {
-    const { width, height } = style; //구조분해할당 //style의 값을 width, height 각 변수에 값 넣기
 
-    return (
-        <img src={img}
-             style={{width:width, height:height}} />
-    );
-}

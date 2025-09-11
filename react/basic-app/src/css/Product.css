@@ -18,12 +18,15 @@
 }
 
 .best-product-img-no {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 0;
     left: 0;
-    color: white;
-    background-color: black;
-    padding: 5px 10px;
+    /* color: white;
+    background-color: black; */
+    /* padding: 5px 10px; */
     /* font-weight: bold; */
 }
 
