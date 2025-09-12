@@ -9,3 +9,16 @@
     display: flex;
     list-style-type: none;
 }
+
+.menu-list-item {
+    position: relative;
+}
+
+.menu-list-item-border {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 10px;
+    background-color: #999;
+}
