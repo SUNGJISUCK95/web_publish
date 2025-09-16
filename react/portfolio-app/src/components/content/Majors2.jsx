@@ -1,4 +1,6 @@
-export function Majors() {
+
+
+export function Majors2() {
     const majors = [       
         {
             "icons": "html",
@@ -25,7 +27,7 @@ export function Majors() {
             {
                 majors && majors.map(major => 
                     <li className="major">
-                        <Major icons={major.icons} title={major.title} subject={major.subject} className={major.className} />                
+                        <Major2 icons={major.icons} title={major.title} subject={major.subject} className={major.className} />                
                     </li>
                 )
             }           
@@ -33,7 +35,7 @@ export function Majors() {
     );
 }
 
-export function Major({icons, title, subject, className}) {
+export function Major2({icons, title, subject, className}) {
     return(
         <>
             {icons === "html" && <i className={className}></i>}
