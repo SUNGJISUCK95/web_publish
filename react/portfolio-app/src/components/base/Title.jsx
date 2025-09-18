@@ -1,15 +1,26 @@
+
 export function Title({title}) {
-    return(
+    return (
         <h2 className="title">{title}</h2>
     );
 }
 
-export function Description({}) {
-    return(
-        <p className="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. <br/>
-            Ducimus facilis porro vel accusamus commodi nulla possimus fugit blanditiis, <br/>
-            in nobis exercitationem laudantium quis modi laborum ad consequatur totam aperiam maxime.
-        </p>
+export function SubTitle({title}) {
+    return (
+        <p class="description">{title}</p>
+    );
+}
+
+export function BottomDescription({description}) {
+    return (
+        <p>{description}</p>        
+    );
+}
+export function Description({style}) {
+    return (
+        <p className={style}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+            Quisquam vitae, totam a ipsa necessitatibus rem illum exercitationem, 
+            doloremque aliquam dolor cupiditate quo quasi quae magnam dicta aperiam, 
+            vero recusandae adipisci?</p>
     );
 }
