@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { LuShoppingBag } from "react-icons/lu";
 
-export function Header() {
+export function Header({cartCount}) {
+
     return(
         <div className="header-outer">
             <div className="header">
@@ -11,6 +12,7 @@ export function Header() {
                 </Link>
                 <nav className="header-right">
                     <Link to="/all">Products</Link> {/** Link의 to와 ㅁㅁ가 주소가 같아야하고(대소문자까지), 해당 부분은 a태그와 같다고 보면된다. */}
+                    <Link to="/cart">MyCart({cartCount})</Link>
                     <Link to="/login">
                         <button type="button">Login</button>
                     </Link>
