@@ -8,7 +8,7 @@ import { Signup } from './pages/Signup.jsx';
 import { Cart } from './pages/Cart.jsx';
 import { ProductDetail } from './pages/ProductDetail.jsx';
 
-import { cartItemsCheck } from './utils/cart.js';
+import { cartItemsCheck, updateCartItemsQty } from './utils/cart.js';
 
 import './styles/cgvSignup.css';
 import "./styles/cgv.css";
@@ -26,6 +26,23 @@ export default function App() {
     setCartItems(cartItemsCheck(cartItems, cartItem));
     setCartCount(cartCount + 1);
   };
+  
+  //리덕스를 사용하는이유?
+  const updateCart = (cid, type) => {
+    //console.log(cid, type);
+    if(type === undefined) {
+      const findItem = cartItems.find(item => item.cid === cid);
+      setCartCount(cartCount - findItem.qty);
+
+      setCartItems((cartItems) => {
+          return cartItems.filter(item => !(item.cid === cid));
+      });
+    }else {
+      setCartItems(updateCartItemsQty(cartItems, cid, type));   
+      type === '+' ? setCartCount(cartCount + 1)
+                  : cartCount > 0 ? setCartCount(cartCount - 1) : setCartCount(cartCount);
+    }
+  }
 
   console.log(cartItems, cartCount);
   
@@ -37,10 +54,12 @@ export default function App() {
           <Route path="/all" element={<Products/>}></Route>
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/signup" element={<Signup/>}></Route>
-          <Route path="/cart" element={<Cart/>}></Route>
+          <Route path="/cart" element={<Cart items={cartItems} updateCart={updateCart}/>}></Route>
           <Route path="/products/:pid" element={<ProductDetail addCart={addCart}/>}></Route> {/* /:pid 경로로 넘어가는 변수를 :으로 해서 변수명(pid)를 적용하여 사용 */}
         </Route>
       </Routes>
     </BrowserRouter>
   );
 }
+
+
