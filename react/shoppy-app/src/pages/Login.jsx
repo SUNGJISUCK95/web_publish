@@ -1,9 +1,11 @@
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { validateFormCheck } from "../utils/validate.js";
 
 export function Login() {
     const idRef = useRef(null);
     const pwdRef = useRef(null);
+    const navigate = useNavigate();
     
     const initForm = { id:"", pwd:"" };
     const [formData, setFormData] = useState(initForm);
@@ -32,7 +34,21 @@ export function Login() {
         }
 
         if(validateFormCheck(param)) {
-            console.log('서버전송 --> ', formData);            
+            // console.log('서버전송 --> ', formData);   
+            const did = "test";
+            const dpwd = "1234";
+            if(did === formData.id && dpwd === formData.pwd){
+                alert("로그인에 성공하였습니다.");
+                const loginInfo = {
+                    "userId": formData.id,
+                    "token": "dummyData"
+                }
+                // localStorage.setItem("loginInfo", JSON.stringify(loginInfo)); //브라우저의 Local Storage에 입력한 id,pwd 저장
+                navigate("/"); //navigate로 경로를 지정해 이동 // "/"는 메인페이지 이동
+            } else {
+                alert("로그인 실패, 확인 후 다시 진행해주세요.");
+                idRef.current.focus();
+            }
         }
         
     }

@@ -7,12 +7,15 @@ import { Login } from './pages/Login.jsx';
 import { Signup } from './pages/Signup.jsx';
 import { Cart } from './pages/Cart.jsx';
 import { ProductDetail } from './pages/ProductDetail.jsx';
+import { CheckoutInfo } from './pages/CheckoutInfo.jsx';
+import { Support } from './pages/Support.jsx';
 
 import { cartItemsCheck, updateCartItemsQty } from './utils/cart.js';
 
 import './styles/cgvSignup.css';
 import "./styles/cgv.css";
 import './styles/shoppy.css';
+import './styles/commons.css'
 
 export default function App() {
   //1. 장바구니 수량 관리 : setCartCount
@@ -44,7 +47,7 @@ export default function App() {
     }
   }
 
-  console.log(cartItems, cartCount);
+  // console.log(cartItems, cartCount);
   
   return(
     <BrowserRouter>
@@ -56,6 +59,8 @@ export default function App() {
           <Route path="/signup" element={<Signup/>}></Route>
           <Route path="/cart" element={<Cart items={cartItems} updateCart={updateCart}/>}></Route>
           <Route path="/products/:pid" element={<ProductDetail addCart={addCart}/>}></Route> {/* /:pid 경로로 넘어가는 변수를 :으로 해서 변수명(pid)를 적용하여 사용 */}
+          <Route path='/checkout' element={<CheckoutInfo/>}></Route>
+          <Route path='/support' element={<Support/>}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
