@@ -1,28 +1,64 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { RiDeleteBin6Line } from 'react-icons/ri'; 
-import { useCart } from '../hooks/useCart.js';
+import { axiosData } from '../utils/dataFetch.js';
+import { cartItemsAddInfo, getTotalPrice } from '../utils/cart.js';
 import { CartContext } from '../context/CartContext.js';
 import '../styles/cart.css';
 
-
-export function Cart() {
-    const { showCart, updateCart, removeCart } = useCart();
-    const { cartList, totalPrice } = useContext(CartContext); 
-    //props로 보내던 useSatate에서 전역변수인 Context로 변경하여 일일히 props 사용안해도 됨
+export function Cart({items, updateCart}) {
+    const navigate = useNavigate(); //
+    // const [cartList, setCartList] = useState([]);
+    // const [totalPrice, setTotalPrice] = useState(0);
     
-    const navigate = useNavigate();
+    const {cartList, totalPrice} = useContext(CartContext); 
 
-    useEffect(() => { //useEffect로 되어있으면 해당 내용을 맨먼저 한번 실행한다.
-        showCart();
+    useEffect(() => {
+        const fetch = async () => {
+            const jsonData = await axiosData("/data/products.json");
+            setCartList(cartItemsAddInfo(jsonData, items));
+            setTotalPrice(getTotalPrice(jsonData, items));
+        }
+        fetch();
     }, []);
+    
+    //수량 업데이트 함수
+    const handleUpdateCartList = (cid, type) => {
+        setCartList((cartList) => cartList.map((item) => 
+            item.cid === cid ?
+                type === '+'? {...item, qty: item.qty+1}   
+                            : item.qty > 1 ? {...item, qty: item.qty-1} : item 
+            :   item  
+        ));
+
+        const findItem = cartList.find((item) => item.cid === cid);
+        type === '+' ? setTotalPrice(totalPrice + findItem.price) 
+                    : findItem.qty > 1 ? setTotalPrice(totalPrice - findItem.price)
+                    : setTotalPrice(totalPrice); 
+        
+        updateCart(cid, type);
+    }
+    
+    //장바구니 아이템 삭제 함수
+    const handelRemoveCartList = (cid) => {
+        const findItem = cartList.find(item => item.cid === cid);
+        setTotalPrice(totalPrice - (findItem.qty * findItem.price));
+
+        setCartList((cartList) => {
+            return cartList.filter(item => !(item.cid === cid)); //filter는 새로운 배열 생성
+            // filter(item => item.cid === cid)는 cid가 같은 item 이외는 전부 삭제하고 새 배열 생성이라서
+            // filter(item => !(item.cid === cid))로 cid가 같은 item이 아닌 나머지로 새 배열 생성해서 선택한 상품만 제거
+        });
+
+        updateCart(cid);
+    }
+
+    console.log("cartList ==> ", cartList);
     
     return (
         <div className='cart-container'>
             <h2 className='cart-header'>장바구니</h2>
-            { cartList && cartList.map((item) => { 
-                console.log(item);
-                
+            { cartList && cartList.map(item => 
                 <div key={item.pid}>
                     <div className='cart-item'>
                         {item.cid}
@@ -35,18 +71,17 @@ export function Cart() {
                         </div>
                         <div className='cart-quantity'>
                             <button type='button'
-                                    onClick={()=>{ item.qty > 1 && updateCart(item.cid, '-')}}>-</button>
+                                    onClick={()=>{ item.qty > 1 && handleUpdateCartList(item.cid, '-')}}>-</button>
                             <input type='text' value={item.qty} readOnly/>
                             <button type='button'
-                                    onClick={()=>{updateCart(item.cid, '+')}}>+</button>
+                                    onClick={()=>{handleUpdateCartList(item.cid, '+')}}>+</button>
                         </div>
                         <button className='cart-remove'
-                                onClick={() => {removeCart(item.cid)}}>
+                                onClick={() => {handelRemoveCartList(item.cid)}}>
                             <RiDeleteBin6Line />
                         </button>
                     </div>
                 </div>    
-            }
             )}
 
             {/* 주문 버튼 출력 */}
@@ -70,14 +105,15 @@ export function Cart() {
                     </div>
                     <p className='cart-total2'>
                         <label>총 금액 : </label>
-                        <span>{totalPrice.toLocaleString()}</span>
+                        <span>10000원</span>
                     </p>
                 </div>
                 <div className='cart-actions'>
                     <button type='button' onClick={()=>{
                                             // 주문결제 페이지로 이동
                                             // navigate(이동주소, 전송객체); //전송객체는 생략할 수 있다.
-                                            navigate("/checkout");
+                                            navigate("/checkout", {state: {cartList: cartList,
+                                                                            totalPrice: totalPrice}});
                                         }}>주문하기</button>
                 </div>
             </>

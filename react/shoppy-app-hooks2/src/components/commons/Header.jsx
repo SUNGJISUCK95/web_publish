@@ -1,15 +1,9 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { LuShoppingBag } from "react-icons/lu";
 import { GiShoppingCart } from "react-icons/gi";
-import { CartContext } from "../../context/CartContext.js";
-import { AuthContext } from "../../context/AuthContext.js";
-import { useAuth } from "../../hooks/useAuth.js";
 
-export function Header() {
-    const { handleLogout } = useAuth();
-    const { isLogin } = useContext(AuthContext);
-    const { cartCount } = useContext(CartContext);
+export function Header({cartCount}) {
 
     // Login.jsx의 validateFormCheck부분에서 id,pwd를 입력해서 로그인하면 브라우저의 Local Storage에 입력한 값이 쌓인 후,
     // 아래 코드를 실행하면 Storage에 있는 값을 가져와 log에 출력한다. (parse를 해줘야 객체로 변환되서 사용가능)
@@ -24,7 +18,7 @@ export function Header() {
             <div className="header">
                 <Link to="/" className="header-left">
                     <LuShoppingBag />
-                    <span>Shoppy-hooks</span>
+                    <span>Shoppy</span>
                 </Link>
                 <nav className="header-right">
                     <Link to="/all">Products</Link> {/** Link의 to와 ㅁㅁ가 주소가 같아야하고(대소문자까지), 해당 부분은 a태그와 같다고 보면된다. */}
@@ -32,19 +26,13 @@ export function Header() {
                         <GiShoppingCart className='header-icons'/>
                         <span className='header-icons-cart'>{cartCount}</span>
                     </Link>
-                    { isLogin ? 
-                            <button type="button" onClick={handleLogout}>Logout</button>
-                        : 
-                        <Link to="/login">
-                            <button type="button">Login</button>
-                        </Link>
-                    }
+                    <Link to="/login">
+                        <button type="button">Login</button>
+                    </Link>
                     <Link to="/signup">
                         <button type="button">Signup</button>
                     </Link>
-                    { isLogin &&
-                        <Link to="/support">Support</Link>
-                    }
+                    <Link to="/support">Support</Link>
                 </nav>
             </div>
         </div>

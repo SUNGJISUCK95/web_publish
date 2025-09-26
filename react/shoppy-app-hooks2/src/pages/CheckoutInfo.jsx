@@ -1,16 +1,17 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { CartContext } from "../context/CartContext.js";
 import "../styles/cart.css";
 import "../styles/checkoutinfo.css";
 
 export function CheckoutInfo() {   
-    // const { state } = useLocation(); 
+    const { state } = useLocation(); 
     // Cart.jsx의 navigate("/checkout", {state: cartList});로 전송받은 객체를 받음
     // useNavigate()와 useLocation()은 서로 짝궁임
 
-    const { cartList, totalPrice } = useContext(CartContext);
-
+    const [orderList, setOrderList] = useState(state.cartList);
+    console.log("state ==> ", state);
+    console.log("orderList ==> ", orderList);
+    
 return (
     <div className="cart-container">
     <h2 className="cart-header"> 주문/결제</h2>
@@ -64,7 +65,7 @@ return (
         <h2 className="section-title">주문 상품</h2>
         <div className="info-box">
         <div className="info-grid">
-            { cartList && cartList.map(item => 
+            { orderList && orderList.map(item => 
                 <>
                     <div className="label">상품명</div>
                     <div className="value">
@@ -82,7 +83,7 @@ return (
         <table class="payment-table">
         <tr>
             <td>총상품가격</td>
-            <td class="price">{totalPrice.toLocaleString()}원</td> 
+            <td class="price">{state.totalPrice.toLocaleString()}원</td> 
         </tr>
         <tr>
             <td>즉시할인</td>
