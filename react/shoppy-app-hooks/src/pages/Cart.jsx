@@ -20,12 +20,9 @@ export function Cart() {
     return (
         <div className='cart-container'>
             <h2 className='cart-header'>장바구니</h2>
-            { cartList && cartList.map((item) => { 
-                console.log(item);
-                
+            { cartList && cartList.map(item => 
                 <div key={item.pid}>
                     <div className='cart-item'>
-                        {item.cid}
                         <img src={item.image} alt="product img" />
                         <div className='cart-item-details'>
                             <p className='cart-item-title'>{item.name}</p>
@@ -35,18 +32,18 @@ export function Cart() {
                         </div>
                         <div className='cart-quantity'>
                             <button type='button'
-                                    onClick={()=>{ item.qty > 1 && updateCart(item.cid, '-')}}>-</button>
+                                    onClick={()=>{ item.qty > 1 &&
+                                                    updateCart(item.cid, '-')}}>-</button> 
                             <input type='text' value={item.qty} readOnly/>
                             <button type='button'
                                     onClick={()=>{updateCart(item.cid, '+')}}>+</button>
                         </div>
                         <button className='cart-remove'
-                                onClick={() => {removeCart(item.cid)}}>
+                                onClick={()=>{removeCart(item.cid, item.qty, item.price)}}> 
                             <RiDeleteBin6Line />
-                        </button>
+                        </button> 
                     </div>
                 </div>    
-            }
             )}
 
             {/* 주문 버튼 출력 */}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom"; // /:pid로 넘어온 변수를 담아서 가지고 있는 기능
 import { axiosData } from '../utils/dataFetch.js';
 import { PiGiftThin } from 'react-icons/pi';
@@ -10,32 +10,28 @@ import { QnA } from '../components/detailTabs/QnA.jsx';
 import { Return } from '../components/detailTabs/Return.jsx';
 
 import { useCart } from "../hooks/useCart.js";
+import { useProduct } from "../hooks/useProduct.js";
+import { ProductContext } from "../context/ProductContext.js";
 
 export function ProductDetail() {
     const { addCart } = useCart();
+    const { filterProduct } = useProduct();
+    const { product, imgList } = useContext(ProductContext);
 
     const { pid } = useParams(); 
     // { pid: 1 } 
     // 객체(object)형태로 가지고 있음
     // 그래서 구조 분해 할당으로 사용
     
-    const[product, setProduct] = useState({});
+    // const[product, setProduct] = useState({});
     const[size, setSize] = useState('XS');
-    const[imgList, setImgList] = useState([]);
+    // const[imgList, setImgList] = useState([]);
     const tabLabels = ['DETAIL', 'REVIEN', 'Q&A', 'RETURN & DELIVERY'];
     const [tabName, setTabName] = useState('detail');
     const tabEventNames = ['detail', 'review', 'qna', 'return']; 
 
     useEffect(() => {
-        const filterData = async () => {
-            const jsonData = await axiosData("/data/products.json");
-            const [filterProduct] = await jsonData.filter((item) => //filter함수는 실행 결과값으로 새로운 배열을 생성한다.
-                item.pid === pid
-            );
-            setProduct(filterProduct); // [{}]
-            setImgList(filterProduct.imgList);
-        }
-        filterData();
+       filterProduct(pid);
     },[]);
 
     // console.log("---> ", product);
