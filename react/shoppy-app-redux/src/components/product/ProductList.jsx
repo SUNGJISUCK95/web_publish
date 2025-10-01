@@ -6,17 +6,22 @@ import { useProduct } from '../../hooks/useProduct.js';
 import { ProductContext } from '../../context/ProductContext.js';
 import { useContext } from 'react';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { getProductList } from '../../feature/product/productAPI.js';
+
 export function ProductList() {
-    const { createProduct } = useProduct(ProductContext);
-    const { productList } = useContext(ProductContext);
-    
-    const [rows, setRows] = useState([]);
+    const dispatch = useDispatch();
+    const productList = useSelector((state) => state.product.productList); 
+
+    // const { productList } = useContext(ProductContext);
+    // const { createProduct } = useProduct();
     const [number, setNumber] = useState(3); 
     //useState는 값이 바뀌면 number를 사용하는 모든 컴포넌트들(useEffect 등)에게 변경사항을 전달하고 업데이트한다.
 
     useEffect(() => {
         //1. createProduct
-       createProduct(number);
+        //createProduct(number);
+        dispatch(getProductList(number));
     }, [number]);
     
     // console.log("list --> ", list);

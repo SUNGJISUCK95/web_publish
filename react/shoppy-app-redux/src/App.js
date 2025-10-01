@@ -31,7 +31,9 @@ export default function App() {
                 <Route path="/login" element={<Login/>}></Route>
                 <Route path="/signup" element={<Signup/>}></Route>
                 <Route path="/cart" element={
+                  <ProtectedPageRoute>
                     <Cart/>
+                  </ProtectedPageRoute>
                   }></Route>
                 <Route path="/products/:pid" element={<ProductDetail />}></Route> {/* /:pid 경로로 넘어가는 변수를 :으로 해서 변수명(pid)를 적용하여 사용 */}
                 <Route path='/checkout' element={

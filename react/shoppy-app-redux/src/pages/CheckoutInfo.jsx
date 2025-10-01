@@ -4,12 +4,11 @@ import { CartContext } from "../context/CartContext.js";
 import "../styles/cart.css";
 import "../styles/checkoutinfo.css";
 
-export function CheckoutInfo() {   
-    // const { state } = useLocation(); 
-    // Cart.jsx의 navigate("/checkout", {state: cartList});로 전송받은 객체를 받음
-    // useNavigate()와 useLocation()은 서로 짝궁임
+import { useSelector } from "react-redux";
 
-    const { cartList, totalPrice } = useContext(CartContext);
+export function CheckoutInfo() {   
+    const cartList = useSelector((state) => state.cart.cartList);
+    const totalPrice = useSelector((state) => state.cart.totalPrice);
 
 return (
     <div className="cart-container">
@@ -106,7 +105,7 @@ return (
         </tr>
         <tr class="total">
             <td>총결제금액</td>
-            {/* <td class="total-price">{totalPrice.toLocaleString()}원</td> */}
+            <td class="total-price">{totalPrice.toLocaleString()}원</td>
         </tr>
         </table>
     </div>

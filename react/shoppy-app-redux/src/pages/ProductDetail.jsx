@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom"; // /:pid로 넘어온 변수를 담아서 가지고 있는 기능
-import { axiosData } from '../utils/dataFetch.js';
 import { PiGiftThin } from 'react-icons/pi';
 import { ImageList } from "../components/commons/ImageList.jsx";
 import { StarRating } from "../components/commons/StarRating.jsx";
@@ -9,48 +8,31 @@ import { Review } from '../components/detailTabs/Review.jsx';
 import { QnA } from '../components/detailTabs/QnA.jsx';
 import { Return } from '../components/detailTabs/Return.jsx';
 
-import { useCart } from "../hooks/useCart.js";
-import { useProduct } from "../hooks/useProduct.js";
-import { ProductContext } from "../context/ProductContext.js";
-
-import { useDispatch } from "react-redux";
-// import { addCartItem, updateCartCount } from "../feature/cart/cartSlice.js";
+import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "../feature/cart/cartAPI.js";
+import { getProduct } from "../feature/product/productAPI.js";
 
 export function ProductDetail() {
-    const dispatch = useDispatch(); //useDispath()를 이용해서 함수 호출
-    
-    const { filterProduct } = useProduct();
-    const { product, imgList } = useContext(ProductContext);
-
     const { pid } = useParams(); 
     // { pid: 1 } 
     // 객체(object)형태로 가지고 있음
     // 그래서 구조 분해 할당으로 사용
+
+    const dispatch = useDispatch(); //useDispath()를 이용해서 함수 호출
+    const product = useSelector((state) => state.product.product); 
+    // const imgList = useSelector((state) => state.product.product.imgList);
+    const imgList = useSelector((state) => state.product.product.imgList);
     
-    // const[product, setProduct] = useState({});
     const[size, setSize] = useState('XS');
-    // const[imgList, setImgList] = useState([]);
     const tabLabels = ['DETAIL', 'REVIEN', 'Q&A', 'RETURN & DELIVERY'];
     const [tabName, setTabName] = useState('detail');
     const tabEventNames = ['detail', 'review', 'qna', 'return']; 
 
     useEffect(() => {
-       filterProduct(pid);
+        dispatch(getProduct(pid));
     },[]);
 
     // console.log("---> ", product);
-
-    //쇼핑백 추가하기 함수
-    const handleAddCartItem = () => {
-        alert("상품이 카트에 추가되었습니다.")
-        const cartItem = {
-            pid: product.pid,
-            size: size,
-            qty: 1
-        }
-        dispatch(addCart(cartItem)); //addCart 호출 시 dispatch 전송
-    };
 
     return(
         <div className="content">
@@ -88,7 +70,7 @@ export function ProductDetail() {
                     </li>
                     <li className="flex">
                         <button type="button" className="product-detail-button order">바로 구매</button>
-                        <button type="button" className="product-detail-button cart" onClick={handleAddCartItem}>쇼핑백 담기</button>
+                        <button type="button" className="product-detail-button cart" onClick={() => dispatch(addCart(product.pid, size))}>쇼핑백 담기</button>
                         <div type="button" className="gift">
                             <PiGiftThin/>
                             <div className="gift-span">선물하기</div>

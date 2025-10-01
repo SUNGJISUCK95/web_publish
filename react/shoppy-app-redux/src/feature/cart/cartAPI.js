@@ -21,8 +21,8 @@ export const showCart = () => async (dispatch) => {
     dispatch(updateTotalPrice());
 }
 
-export const addCart = (cartItem) => async (dispatch) => {
-    dispatch(addCartItem({"cartItem": cartItem})); //{"cartItem": cartItem} 처럼 객체형태로 보내는것을 권장
+export const addCart = (pid, size) => async (dispatch) => {
+    dispatch(addCartItem({"cartItem": {"pid":pid, "size":size, "qty":1}})); //{"cartItem": cartItem} 처럼 객체형태로 보내는것을 권장
     dispatch(updateCartCount());
 }
 
