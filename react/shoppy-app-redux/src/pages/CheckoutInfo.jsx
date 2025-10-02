@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
-import { useLocation } from "react-router-dom";
-import { CartContext } from "../context/CartContext.js";
+import { useSelector } from "react-redux";
 import "../styles/cart.css";
 import "../styles/checkoutinfo.css";
 
-import { useSelector } from "react-redux";
 
 export function CheckoutInfo() {   
     const cartList = useSelector((state) => state.cart.cartList);

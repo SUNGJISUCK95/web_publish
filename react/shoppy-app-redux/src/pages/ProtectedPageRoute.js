@@ -18,10 +18,4 @@ export function ProtectedPageRoute({ children }) { //로그인 체크 보안
         isAlert.current = true;
         return children;
     }
-    return (
-        <div>
-
-        </div>
-    );
 }
-
