@@ -1,0 +1,26 @@
+[
+    {
+        "pid" : "1",
+        "image" : "/images/bycicle_buy1.jpg",
+        "name": "구매",
+        "description": [
+            "구매 메뉴 설명"
+        ]
+    },
+    {
+        "pid" : "2",
+        "image" : "/images/bycicle_travel1.jpg",
+        "name": "여행",
+        "description": [
+            "여행 메뉴 설명"
+        ]
+    },
+    {
+        "pid" : "3",
+        "image" : "/images/bycicle_rental1.jpg",
+        "name": "대여",
+        "description": [
+            "대여 메뉴 설명"
+        ]
+    }    
+]
