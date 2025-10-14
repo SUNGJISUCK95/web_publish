@@ -20,6 +20,8 @@ export function Travel() {
     const [showFoods, setShowFoods] = useState(false);
     const [showWalks, setShowWalks] = useState(false);
 
+    //2025-10-14 
+    //내일 여기 handleClick으로 바꿔서 매개변수 값으로 실행 함수 분리하기
     const handleCoordinate = () => {
         setShowMenus(true); // 버튼들 보이게 상태 변경
     }
