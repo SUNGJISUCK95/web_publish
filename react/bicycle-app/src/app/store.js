@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import menuSlice from '../feature/menu/menuSlice.js';
 import authSlice from '../feature/auth/authSlice.js';
+import travelSlice from '../feature/travel/travelSlice.js';
 
 //액션 로깅 처리 담당 미들웨어
 const myLoggerMiddlware = (store) => (next) => (action) => {
@@ -15,7 +16,8 @@ const myLoggerMiddlware = (store) => (next) => (action) => {
 export const store = configureStore({
   reducer: {
     menu: menuSlice,
-    auth: authSlice
+    auth: authSlice,
+    travelMenu : travelSlice
   },
   middleware: (getDefaultMiddleware) =>
               getDefaultMiddleware()

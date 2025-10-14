@@ -175,3 +175,17 @@ content {
 .travel-menu {
   display: inline-block;
 }
+
+/**
+  food
+*/
+.food-list {
+  list-style-type: none;
+}
+
+/**
+  walk
+*/
+.walk-list {
+  list-style-type: none;
+}
