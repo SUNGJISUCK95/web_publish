@@ -1,5 +1,5 @@
 import React from "react";
-import { createMenu } from "./travelSlice.js";
+import { createMenu } from "./travelMenuSlice.js";
 import { axiosData, groupByRows } from "../../utils/dataFetch.js";
 
 export const getTravelMenuList = (number) => async(dispatch) => {

@@ -6,7 +6,7 @@ const initialState = {
     travelMenu: {} //상세페이지 객체 하나
 }
 
-export const travelSlice = createSlice({
+export const travelMenuSlice = createSlice({
   name: 'travelMenu',
   initialState,
   reducers: {
@@ -20,8 +20,8 @@ export const travelSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { createMenu } = travelSlice.actions //API 함수 또는 컴포넌트에서 dispatch(액션함수)
+export const { createMenu } = travelMenuSlice.actions //API 함수 또는 컴포넌트에서 dispatch(액션함수)
 
-export default travelSlice.reducer //store import
+export default travelMenuSlice.reducer //store import
 
 

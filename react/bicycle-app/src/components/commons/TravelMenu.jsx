@@ -1,5 +1,7 @@
-export function TravelMenu({name}) {
+export function TravelMenu({name, type, handleClick}) {
     return(
-        <button type="button" className="travel-menu" >{name}</button>
+        <button type="button" 
+                className="travel-menu" 
+                onClick={() => {handleClick(type)}} >{name}</button>
     );
 }

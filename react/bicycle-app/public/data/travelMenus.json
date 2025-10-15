@@ -1,12 +1,12 @@
 [
     {
         "pid" : "1",
-        "type": "Food",
+        "type": "food",
         "name": "맛집"
     },
     {
         "pid" : "2",
-        "type": "Walk",
+        "type": "walk",
         "name": "산책로"
     }
 ]
