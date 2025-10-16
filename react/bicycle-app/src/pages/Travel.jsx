@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import { TravelMenu } from "../components/commons/TravelMenu.jsx";
 import { TravelFood } from "../components/commons/TravelFood.jsx";
 import { TravelWalk } from "../components/commons/TravelWalk.jsx";
-import KakaoMap from '../components/commons/KakaoMap.jsx';
+import Map from '../components/commons/Map.jsx';
 import { getTravelMenuList } from '../feature/travel/travelMenuAPI.js';
 import { getTravelFoodList } from '../feature/travel/travelFoodAPI.js';
 import { getTravelWalkList } from '../feature/travel/travelWalkAPI.js';
@@ -87,7 +87,7 @@ export function Travel() {
                     </div>
                 </div>
                 <div className="travel-map">
-                    <KakaoMap type="coord" handleClick={handleClick} />                    
+                    <Map handleClick={handleClick} />                    
                 </div>
             </div>
         </div>

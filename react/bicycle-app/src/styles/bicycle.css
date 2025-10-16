@@ -57,7 +57,7 @@ content {
   height: 640px;   /*높이 고정해도 되고, 아래처럼 해도 됨*/
   max-width: 100%;   /* 원하는 넓이 제한 */
   padding: 20px;      /* 내부 여백 */
-  background-image: url("http://localhost:3000/images/banner.jpg");
+  background-image: url("http://localhost:3001/images/banner.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;  
@@ -168,30 +168,11 @@ content {
 .travel-map {
   width: 55%;
   height: 700px;
-  background-image: url("http://localhost:3000/images/map.jpg");
-  background-size: cover;
-
-  position: relative;
 }
 
 #map {
   width: 100%;
   height: 100%;
-}
-
-.travel-map-button {
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-  font-size: 40px;
-  color: green;
-  line-height: 0px;
-  border: none;
-  background-color: transparent;
-
-  position: absolute;
-  top: 50%;
-  left: 40%;
 }
 
 .travel-menu {
